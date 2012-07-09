@@ -3,7 +3,8 @@ name = "connections"
 
 
 def doData():
-    print name + ".value " + str( getServerStatus()["connections"]["current"] )
+    print name + ".value " + str(getServerStatus()["connections"]["current"])
+
 
 def doConfig():
 
@@ -13,8 +14,3 @@ def doConfig():
     print "graph_category MongoDB"
 
     print name + ".label " + name
-
-
-
-
-

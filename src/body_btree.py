@@ -1,10 +1,13 @@
 
+
 def get():
     return getServerStatus()["indexCounters"]["btree"]
 
+
 def doData():
-    for k,v in get().iteritems():
-        print( str(k) + ".value " + str(int(v)) )
+    for k, v in get().iteritems():
+        print(str(k) + ".value " + str(int(v)))
+
 
 def doConfig():
 
@@ -19,8 +22,3 @@ def doConfig():
         print k + ".type COUNTER"
         print k + ".max 500000"
         print k + ".draw LINE1"
-
-
-
-
-

@@ -2,11 +2,11 @@
 
 def doData():
     ss = getServerStatus()
-    for k,v in ss["opcounters"].iteritems():
-        print( str(k) + ".value " + str(v) )
+    for k, v in ss["opcounters"].iteritems():
+        print(str(k) + ".value " + str(v))
+
 
 def doConfig():
-
     print "graph_title MongoDB ops"
     print "graph_args --base 1000 -l 0"
     print "graph_vlabel ops / ${graph_period}"
