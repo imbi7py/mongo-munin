@@ -9,8 +9,8 @@ except ImportError:
 
 
 def getServerStatus():
-    host = os.environ.get("host", "127.0.0.1")
-    port = 28017
+    host = os.environ.get("MONGO_MUNIN_HOST", "127.0.0.1")
+    port = os.environ.get("MONGO_MUNIN_PORT", 28017)
     url = "http://%s:%d/_status" % (host, port)
     req = urllib2.Request(url)
     user = os.environ.get("user")

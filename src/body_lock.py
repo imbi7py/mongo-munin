@@ -3,7 +3,15 @@ name = "locked"
 
 
 def doData():
-    print name + ".value " + str(100 * getServerStatus()["globalLock"]["ratio"])
+    server_status = getServerStatus()
+    lockstatus = server_status["globalLock"]
+    # Get the ratio if version 2.0.6 or calculate if newer
+    ratio = lockstatus.get("ratio",
+        lockstatus["lockTime"] / float(lockstatus["totalTime"]))
+    print name + ".value " + str(100 * ratio)
+    if "locks" in server_status:
+        for k, v in server_status["locks"].iteritems():
+            print k, v
 
 
 def doConfig():

@@ -1,8 +1,11 @@
 
 
+def get():
+    return getServerStatus()["opcounters"]
+
+
 def doData():
-    ss = getServerStatus()
-    for k, v in ss["opcounters"].iteritems():
+    for k, v in get().iteritems():
         print(str(k) + ".value " + str(v))
 
 
@@ -13,7 +16,7 @@ def doConfig():
     print "graph_category MongoDB"
     print "graph_total total"
 
-    for k in getServerStatus()["opcounters"]:
+    for k in get():
         print k + ".label " + k
         print k + ".min 0"
         print k + ".type COUNTER"
